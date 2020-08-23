@@ -195,7 +195,7 @@ div.hero-content h1::after {
     position: absolute;
     height: 10px;
     width: 160px;
-    background: #dddddd;
+    background: pink;
     right: -104.5%;
     bottom: -157%;
     border-radius: 4px 0 0 4px;
