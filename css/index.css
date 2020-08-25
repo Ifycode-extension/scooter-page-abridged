@@ -4,9 +4,10 @@
 /*==========================
     Remove scrollbar so that 
     #css_width_onresize can 
-    display right figures.
+    display desired figures
+    (Chrome, Safari & Opera)
 ===========================*/
-::-webkit-scrollbar {
+body::-webkit-scrollbar {
     display: none;
 }
 
@@ -33,6 +34,11 @@ body {
     color: white;
     background: #808080;
     box-shadow: 1px 1px 5px #333333;
+    /*===================================
+    Remove scrollbar (IE, edge & firefox)
+    ====================================*/
+    -ms-overflow-style: none; /* IE & Edge */
+    scrollbar-width: none;  /* Firefox */
 }
 
 /*=====================================
@@ -56,7 +62,7 @@ header {
     position: relative;
 }
 
-header span {
+header span.css_width_onresize {
     position: absolute;
     bottom: -80%;
 }
@@ -83,6 +89,63 @@ div.hero-content {
     position: relative;
 }
 
+div.hero-content h1 {
+    font-size: 2.7em;
+    font-weight: bold;
+    position: relative;
+}
+
+div.hero-content p {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.9em;
+    margin: 20px 0 0 60px;
+    text-align: justify;
+    line-height: 1.5em;
+}
+
+button {
+    font-family: 'Courier Prime', monospace;
+    background: white;
+    color: #808080;
+    padding: 15px 25px;
+    font-size: 1.1em;
+    font-weight: bold;
+    margin: 20px 0 0 60px;
+    position: relative;
+}
+
+div.image-slider-control {
+    display: inline-flex;
+    align-items: flex-end;
+    width: 160px;
+    position: relative;
+}
+
+div.image-slider-control > * {
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    left: 70px;
+    border: 2px solid white;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+div.image-slider-control > *:first-child {
+    left: 0;
+}
+
+div.image-slider-control > *:last-child {
+    background: #dddddd;
+    left: 140px;
+}
+
+/*============================
+    section.hero-section arrow
+=============================*/
 div.hero-content::before {
     content: "";
     position: absolute;
@@ -148,144 +211,19 @@ div.hero-arrow-body::after {
     -o-border-radius: 4px 0 0 4px;
 }
 
-div.hero-content h1 {
-    font-size: 2.7em;
-    font-weight: bold;
-    position: relative;
-}
-
-div.hero-content p {
-    font-family: 'Nunito Sans', sans-serif;
-    font-size: 0.9em;
-    margin: 20px 0 0 60px;
-    text-align: justify;
-    line-height: 1.5em;
-}
-
-button {
-    font-family: 'Courier Prime', monospace;
-    background: white;
-    color: #808080;
-    padding: 15px 25px;
-    font-size: 1.1em;
-    font-weight: bold;
-    margin: 20px 0 0 60px;
-    position: relative;
-}
-
-div.image-slider-control {
-    display: inline-flex;
-    align-items: flex-end;
-    width: 160px;
-    position: relative;
-}
-
-div.image-slider-control > * {
-    height: 50px;
-    width: 50px;
-    position: absolute;
-    left: 70px;
-    border: 2px solid white;
-    border-radius: 50%;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
-}
-
-div.image-slider-control > *:first-child {
-    left: 0;
-}
-
-div.image-slider-control > *:last-child {
-    background: #dddddd;
-    left: 140px;
-}
-
-/*============================
-    section.hero-section arrow
-=============================*/
-/*div.hero-content p::before {
-    content: "";
-    position: absolute;
-    height: 10px;
-    width: 250px;
-    background: #dddddd;
-    left: -50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    -webkit-transform: translate(-50%, -50%);
-    -moz-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    -o-transform: translate(-50%, -50%);
-}
-
-div.hero-content p::after {
-    content: "";
-    position: absolute;
-    height: 10px;
-    width: 230px;
-    background: #dddddd;
-    left: 145%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    -webkit-transform: translate(-50%, -50%);
-    -moz-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    -o-transform: translate(-50%, -50%);
-    border-radius: 0 4px 4px 0;
-    -webkit-border-radius: 0 4px 4px 0;
-    -moz-border-radius: 0 4px 4px 0;
-    -ms-border-radius: 0 4px 4px 0;
-    -o-border-radius: 0 4px 4px 0;
-}
-
-div.hero-content h1::before {
-    content: "";
-    position: absolute;
-    width: 10px;
-    height: 90px;
-    background: #dddddd;
-    right: -67%;
-    bottom: -157%;
-    border-radius: 0 0 4px 4px;
-    -webkit-border-radius: 0 0 4px 4px;
-    -moz-border-radius: 0 0 4px 4px;
-    -ms-border-radius: 0 0 4px 4px;
-    -o-border-radius: 0 0 4px 4px;
-}*/
-
-/*
-div.hero-content h1::after {
-    content: "";
-    position: absolute;
-    height: 10px;
-    width: 160px;
-    background: pink;
-    right: -104.5%;
-    bottom: -157%;
-    border-radius: 4px 0 0 4px;
-    -webkit-border-radius: 4px 0 0 4px;
-    -moz-border-radius: 4px 0 0 4px;
-    -ms-border-radius: 4px 0 0 4px;
-    -o-border-radius: 4px 0 0 4px;
-}*/
-
-/*
-div.hero-content button::before {
+div.hero-arrow-head::before {
     content: "";
     position: absolute;
     width: 10px;
     height: 35px;
     background: #dddddd;
-    right: -350.7%;
-    bottom: 45%;
-    outline: none;
-    border-radius: 4px;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    -ms-border-radius: 4px;
-    -o-border-radius: 4px;
+    right: -102.2%;
+    top: 77%;
+    border-radius:4px;
+    -webkit-border-radius:4px;
+    -moz-border-radius:4px;
+    -ms-border-radius:4px;
+    -o-border-radius:4px;
     transform: rotate(-40deg);
     -webkit-transform: rotate(-40deg);
     -moz-transform: rotate(-40deg);
@@ -293,26 +231,27 @@ div.hero-content button::before {
     -o-transform: rotate(-40deg);
 }
 
-div.hero-content button::after {
+div.hero-arrow-head::after {
     content: "";
     position: absolute;
-    height: 10px;
-    width: 35px;
+    width: 10px;
+    height: 35px;
     background: #dddddd;
-    right: -357.5%;
-    bottom: 15%;
-    border-radius: 4px;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    -ms-border-radius: 4px;
-    -o-border-radius: 4px;
-    transform: rotate(-40deg);
-    -webkit-transform: rotate(-40deg);
-    -moz-transform: rotate(-40deg);
-    -ms-transform: rotate(-40deg);
-    -o-transform: rotate(-40deg);
+    right: -102.2%;
+    top: 87%;
+    border-radius:4px;
+    -webkit-border-radius:4px;
+    -moz-border-radius:4px;
+    -ms-border-radius:4px;
+    -o-border-radius:4px;
+    transform: rotate(40deg);
+    -webkit-transform: rotate(40deg);
+    -moz-transform: rotate(40deg);
+    -ms-transform: rotate(40deg);
+    -o-transform: rotate(40deg);
 }
-*/
+
+
 /*=======================
     section.other-section
 ========================*/
@@ -383,7 +322,7 @@ div.image-outer::before {
     -o-border-radius: 4px 0 0 4px;
 }
 
-div.image-outer-child:nth-child(1)::before {
+div.other-arrow-body::before {
     content: "";
     position: absolute;
     height: 90px;
@@ -398,7 +337,7 @@ div.image-outer-child:nth-child(1)::before {
     -o-border-radius: 4px 4px 4px 0;
 }
 
-div.image-outer-child:nth-child(1)::after {
+div.other-arrow-body::after {
     content: "";
     position: absolute;
     height: 10px;
@@ -413,7 +352,7 @@ div.image-outer-child:nth-child(1)::after {
     -o-border-radius: 0 4px 4px 0;
 }
 
-div.image-outer-child:nth-child(2)::before {
+div.other-arrow-head::before {
     content: "";
     position: absolute;
     width: 10px;
@@ -433,7 +372,7 @@ div.image-outer-child:nth-child(2)::before {
     -o-transform: rotate(40deg);
 }
 
-div.image-outer-child:nth-child(2)::after {
+div.other-arrow-head::after {
     content: "";
     position: absolute;
     width: 10px;
@@ -492,29 +431,13 @@ div.image-outer-child:nth-child(2)::after {
         right: -76%;
     }
 
-    /*-----------------------*/
-    div.hero-content p::after {
-        width: 170px;
-        left: 138%;
+    div.hero-arrow-head::before {
+        right: -73.8%;
     }
     
-    div.hero-content h1::before {
-        right: -53.5%;
-    }
-    /*-----------------------*/
-
-    div.hero-content h1::after {
-        width: 100px;
-        right: -76.5%;
-    }
-    
-    div.hero-content button::before {
-        right: -283.5%;
-    }
-    
-    div.hero-content button::after {
-        right: -290%;
-    }
+    div.hero-arrow-head::after {
+        right: -73.8%;
+    }    
 
     div.other-section-content {
         margin: 0 0 0 100px;
@@ -529,21 +452,21 @@ div.image-outer-child:nth-child(2)::after {
         right: -100%;
     }
 
-    div.image-outer-child:nth-child(1)::before {
+    div.other-arrow-body::before {
         left: 11.5%;
     }
 
-    div.image-outer-child:nth-child(1)::after {
+    div.other-arrow-body::after {
         width: 100px;
         left: -15.5%;
     }
 
-    div.image-outer-child:nth-child(2)::before {
+    div.other-arrow-head::before {
         left: -13%;
         top: 84%;
     }
 
-    div.image-outer-child:nth-child(2)::after {
+    div.other-arrow-head::after {
         left: -13%;
         top: 92%;
     }
@@ -560,6 +483,10 @@ div.image-outer-child:nth-child(2)::after {
     div.hero-content {
         max-width: 370px;
         margin: 0 0 0 50px;
+    }
+
+    div.hero-content h1 {
+        font-size: 2.5em;
     }
 
     div.hero-content::before {
@@ -585,43 +512,16 @@ div.image-outer-child:nth-child(2)::after {
         right: -58.7%;
     }
 
-    div.hero-content h1 {
-        font-size: 2.5em;
-    }
-
-    /*div.hero-content button {
-        margin: 0;
-    }*/
-    
-    /*-----------------------*/
-    div.hero-content p::after {
-        width: 120px;
-        left: 128%;
-    }
-
-    div.hero-content h1::before {
-        height: 100px;
-        right: -39.7%;
-        bottom: -190%;
-    }
-    /*-----------------------*/
-
-    div.hero-content h1::after {
-        width: 80px;
-        right: -58.6%;
-        bottom: -191.5%;
+    div.hero-arrow-head::before {
+        right: -56.3%;
+        top: 78%;
     }
     
-    div.hero-content button::before {
-        right: -211.9%;
-        bottom: 48.7%;
+    div.hero-arrow-head::after {
+        right: -56.3%;
+        top: 88%;
     }
     
-    div.hero-content button::after {
-        right: -218.5%;
-        bottom: 20%;
-    }
-
     div.other-section-content {
         margin: 0 0 0 50px;
     }
@@ -636,20 +536,20 @@ div.image-outer-child:nth-child(2)::after {
         width: 370px;
     } 
 
-    div.image-outer-child:nth-child(1)::before {
+    div.other-arrow-body::before {
         left: 14.5%;
     }
 
-    div.image-outer-child:nth-child(1)::after {
+    div.other-arrow-body::after {
         top: 95.5%;
     }
 
-    div.image-outer-child:nth-child(2)::before {
+    div.other-arrow-head::before {
         left: -12.5%;
         top: 86.5%;
     }
 
-    div.image-outer-child:nth-child(2)::after {
+    div.other-arrow-head::after {
         left: -12.5%;
         top: 96.5%;
     }
@@ -671,6 +571,10 @@ div.image-outer-child:nth-child(2)::after {
     div.hero-content {
         max-width: 350px;
         margin: 0 0 80px 0;
+    }
+
+    div.hero-content h1 {
+        font-size: 2.3em;
     }
 
     div.hero-content::before {
@@ -699,54 +603,15 @@ div.image-outer-child:nth-child(2)::after {
         bottom: -22.5%;
         left: -0.5%;
     }
+
+    div.hero-arrow-head::before {
+        right: 51.7%;
+        top: 109%;
+    }
     
-    div.hero-content h1 {
-        font-size: 2.3em;
-    }
-
-    div.hero-content p::before {
-        width: 300px;
-        left: -70%;
-        /*border-radius: 4px;
-        -webkit-border-radius: 4px;
-        -moz-border-radius: 4px;
-        -ms-border-radius: 4px;
-        -o-border-radius: 4px;*/
-    }
-
-    div.hero-content p::after {
-       display: none;
-    }
-
-    div.hero-content h1::before {
-        height: 190px;
-        left: -0.3%;
-        bottom: -307.9%;
-        border-radius: 4px;
-        -webkit-border-radius: 4px;
-        -moz-border-radius: 4px;
-        -ms-border-radius: 4px;
-        -o-border-radius: 4px;
-    }
-
-    div.hero-content h1::after {
-        width: 180px;
-        left: 0%;
-        bottom: -308%;
-    }
-
-    div.hero-content button::before {
-        width: 10px;
-        height: 35px;
-        left: 61%;
-        bottom: -122%;
-    }
-
-    div.hero-content button::after {
-        height: 10px;
-        width: 35px;
-        left: 52.5%;
-        bottom: -153%;
+    div.hero-arrow-head::after {
+        right: 51.5%;
+        top: 119%;
     }
 
     div.image-slider-control {
@@ -794,23 +659,23 @@ div.image-outer-child:nth-child(2)::after {
         top: 70%;
     }
     
-    div.image-outer-child:nth-child(1)::before {
+    div.other-arrow-body::before {
         left: 31%;
         top: 68.7%;
     }
     
-    div.image-outer-child:nth-child(1)::after {
+    div.other-arrow-body::after {
         width: 110px;
         left: -9%;
         top: 101%;
     }
     
-    div.image-outer-child:nth-child(2)::before {
+    div.other-arrow-head::before {
         left: -5.3%;
         top: 90.5%;
     }
     
-    div.image-outer-child:nth-child(2)::after {
+    div.other-arrow-head::after {
         left: -5.4%;
         top: 101.7%;
     }    
@@ -820,6 +685,7 @@ div.image-outer-child:nth-child(2)::after {
     Media Query: 440px and below
 ===============================*/
 @media screen and (max-width: 440px) {
+    
     header, footer a {
         color: rgb(183, 255, 183);
     }
@@ -827,6 +693,10 @@ div.image-outer-child:nth-child(2)::after {
     div.hero-content {
         max-width: 290px;
         margin: 0 0 80px 0;
+    }
+
+    div.hero-content h1 {
+        font-size: 1.9em;
     }
 
     div.hero-content::before {
@@ -845,37 +715,15 @@ div.image-outer-child:nth-child(2)::after {
         bottom: -21.7%;
         left: -0.7%;
     }
-    
-    
-    div.hero-content h1 {
-        font-size: 1.9em;
-    }
 
-    /*-----------------------*/
-    div.hero-content p::before {
-        left: -88%;
-    }
-
-    div.hero-content h1::before {
-        height: 200px;
-        bottom: -410.9%;
-    }
-    /*-----------------------*/
-
-    div.hero-content h1::after {
-        width: 120px;
-        left: 0%;
-        bottom: -412%;
-    }
-
-    div.hero-content button::before {
-        left: 24.5%; 
+    div.hero-arrow-head::before {
+        right: 62.5%;
     }
     
-    div.hero-content button::after {
-        left: 16%;
+    div.hero-arrow-head::after {
+        right: 62.5%;
     }
-
+    
     div.other-section-content {
         max-width: 290px;
     }
@@ -893,24 +741,24 @@ div.image-outer-child:nth-child(2)::after {
         left: 148.5%;
     }
     
-    div.image-outer-child:nth-child(1)::before {
+    div.other-arrow-body::before {
         height: 78px;
         left: 31%;
         top: 68.7%;
     }
     
-    div.image-outer-child:nth-child(1)::after {
+    div.other-arrow-body::after {
         width: 88px;
         left: -8%;
         top: 102.5%;
     }
     
-    div.image-outer-child:nth-child(2)::before {
+    div.other-arrow-head::before {
         left: -3.1%;
         top: 89%;
     }
     
-    div.image-outer-child:nth-child(2)::after {
+    div.other-arrow-head::after {
         left: -3.4%;
         top: 103%;
     }
@@ -925,9 +773,10 @@ div.image-outer-child:nth-child(2)::after {
         font-size: 1.2em;
     }
 
-    header span {
+    header span.css_width_onresize {
         position: absolute;
         bottom: -65%;
+        font-size: 0.85em;
     }
 
     header, footer a {
@@ -941,6 +790,19 @@ div.image-outer-child:nth-child(2)::after {
     div.hero-content {
         max-width: 230px;
         margin: 0 0 50px 0;
+    }
+
+    div.hero-content h1 {
+        font-size: 1.5em;
+    }
+
+    div.hero-content p {
+        margin: 20px 0 0 35px;
+        line-height: 1.4em;
+    }
+
+    div.hero-content button {
+        margin: 20px 0 0 35px;
     }
 
     div.hero-content::before {
@@ -960,45 +822,16 @@ div.image-outer-child:nth-child(2)::after {
         left: -0.5%;
     }
 
-    div.hero-content h1 {
-        font-size: 1.5em;
-    }
-
-    div.hero-content p {
-        margin: 20px 0 0 35px;
-        line-height: 1.4em;
-    }
-
-    div.hero-content button {
-        margin: 20px 0 0 35px;
-    }
-
-    /*-----------------------*/
-    div.hero-content p::before {
-        left: -91%;
-    }
-
-    div.hero-content h1::before {
-        height: 185px;
-        bottom: -500%;
-    }
-    /*-----------------------*/
-
-    div.hero-content h1::after {
-        width: 70px;
-        bottom: -502%;
-    }
-
-    div.hero-content button::before {
+    div.hero-arrow-head::before {
         height: 27px;
-        left: -3.4%; 
-        bottom: -80%;
+        right: 72.5%;
+        top: 104%;
     }
     
-    div.hero-content button::after {
-        width: 27px;
-        left: -9.5%; 
-        bottom: -104%;
+    div.hero-arrow-head::after {
+        height: 27px;
+        right: 72.5%;
+        top: 111%;
     }
 
     div.image-slider-control > * {
@@ -1037,20 +870,21 @@ div.image-outer-child:nth-child(2)::after {
         left: 188%;
     }
     
-    div.image-outer-child:nth-child(1)::before {
+    div.other-arrow-body::before {
         height: 61px;
     }
     
-    div.image-outer-child:nth-child(1)::after {
+    div.other-arrow-body::after {
         width: 68px;
     }
     
-    div.image-outer-child:nth-child(2)::before {
+    div.other-arrow-head::before {
         height: 27px;
-        left: -3%;
+        left: -3.2%;
     }
     
-    div.image-outer-child:nth-child(2)::after {
+    div.other-arrow-head::after {
         height: 27px;
+        left: -3.7%;
     }
 }

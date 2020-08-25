@@ -1,6 +1,6 @@
 'use strict';
 
-/*===============================================
+/*================================================
     Javascript media query to set header's content
 =================================================*/
 const header = document.querySelector('#header');
@@ -43,13 +43,38 @@ for (var i=0; i<deviceSizes.length; i++) {
     deviceSizes[i].addListener(respondToQuery);
 }
 
+/*========================================================
+    Store css width & height in function deviceOrientation
+    & call in function deviceWidthAndHeight for later use
+=========================================================*/
+let deviceOrientation = () => {
+    if (document.documentElement.clientWidth <= document.documentElement.clientHeight) {
+        document.querySelector('.orientation').innerHTML = 'Portrait:';
+    }else {
+        document.querySelector('.orientation').innerHTML = 'Landscape:';
+    }
+}
 
-/*====================================
-    Show css width of screen on resize 
-=====================================*/
+let deviceWidthAndHeight = () => {
+    read_css_width_onresize.innerHTML = `<span class="orientation"></span> ${document.documentElement.clientWidth}px <span class="times">&times;</span> ${document.documentElement.clientHeight}px`;
+    deviceOrientation();
+}
+
+/*================================================
+    Show css width & height of screen on page load 
+=================================================*/
+window.onload = () => {
+    deviceWidthAndHeight();
+    read_css_width_onresize.classList.remove('hide-width');
+    read_css_width_onresize.classList.add('reduce-width-opacity');
+}
+
+/*=============================================
+    Show css width & height of screen on resize 
+==============================================*/
 const read_css_width_onresize = document.querySelector('#css_width_onresize');
 window.onresize = () => {
-    read_css_width_onresize.innerText = `Resize: ${document.documentElement.clientWidth}px`;
+    deviceWidthAndHeight();
     read_css_width_onresize.classList.remove('hide-width');
     read_css_width_onresize.classList.remove('reduce-width-opacity');
     let remove = () => {
