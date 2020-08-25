@@ -80,6 +80,72 @@ section.hero-section {
 div.hero-content {
     max-width: 400px;
     margin: 0 0 0 160px;
+    position: relative;
+}
+
+div.hero-content::before {
+    content: "";
+    position: absolute;
+    height: 10px;
+    width: 250px;
+    background: #dddddd;
+    left: -27.5%;
+    top: 59%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+}
+
+div.hero-content::after {
+    content: "";
+    position: absolute;
+    height: 10px;
+    width: 230px;
+    background: #dddddd;
+    left: 138.3%;
+    top: 59%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    border-radius: 0 4px 4px 0;
+    -webkit-border-radius: 0 4px 4px 0;
+    -moz-border-radius: 0 4px 4px 0;
+    -ms-border-radius: 0 4px 4px 0;
+    -o-border-radius: 0 4px 4px 0;
+}
+
+div.hero-arrow-body::before {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 90px;
+    background: #dddddd;
+    right: -67%;
+    top: 57%;
+    border-radius:4px;
+    -webkit-border-radius:4px;
+    -moz-border-radius:4px;
+    -ms-border-radius:4px;
+    -o-border-radius:4px;
+}
+
+div.hero-arrow-body::after {
+    content: "";
+    position: absolute;
+    height: 10px;
+    width: 160px;
+    background: #dddddd;
+    bottom: 10%;
+    right: -104.6%;
+    border-radius: 4px 0 0 4px;
+    -webkit-border-radius: 4px 0 0 4px;
+    -moz-border-radius: 4px 0 0 4px;
+    -ms-border-radius: 4px 0 0 4px;
+    -o-border-radius: 4px 0 0 4px;
 }
 
 div.hero-content h1 {
@@ -94,7 +160,6 @@ div.hero-content p {
     margin: 20px 0 0 60px;
     text-align: justify;
     line-height: 1.5em;
-    position: relative;
 }
 
 button {
@@ -140,7 +205,7 @@ div.image-slider-control > *:last-child {
 /*============================
     section.hero-section arrow
 =============================*/
-div.hero-content p::before {
+/*div.hero-content p::before {
     content: "";
     position: absolute;
     height: 10px;
@@ -188,14 +253,15 @@ div.hero-content h1::before {
     -moz-border-radius: 0 0 4px 4px;
     -ms-border-radius: 0 0 4px 4px;
     -o-border-radius: 0 0 4px 4px;
-}
+}*/
 
+/*
 div.hero-content h1::after {
     content: "";
     position: absolute;
     height: 10px;
     width: 160px;
-    background: #dddddd;
+    background: pink;
     right: -104.5%;
     bottom: -157%;
     border-radius: 4px 0 0 4px;
@@ -203,9 +269,9 @@ div.hero-content h1::after {
     -moz-border-radius: 4px 0 0 4px;
     -ms-border-radius: 4px 0 0 4px;
     -o-border-radius: 4px 0 0 4px;
-}
+}*/
 
-
+/*
 div.hero-content button::before {
     content: "";
     position: absolute;
@@ -246,7 +312,7 @@ div.hero-content button::after {
     -ms-transform: rotate(-40deg);
     -o-transform: rotate(-40deg);
 }
-
+*/
 /*=======================
     section.other-section
 ========================*/
@@ -411,6 +477,22 @@ div.image-outer-child:nth-child(2)::after {
         margin: 0 0 0 100px;
     }
 
+    div.hero-content::after {
+        width: 170px;
+        left: 132.3%;
+    }
+
+    div.hero-arrow-body::before {
+        right: -53.5%;
+    }
+
+    div.hero-arrow-body::after {
+        width: 100px;
+        bottom: 10%;
+        right: -76%;
+    }
+
+    /*-----------------------*/
     div.hero-content p::after {
         width: 170px;
         left: 138%;
@@ -419,7 +501,8 @@ div.image-outer-child:nth-child(2)::after {
     div.hero-content h1::before {
         right: -53.5%;
     }
-    
+    /*-----------------------*/
+
     div.hero-content h1::after {
         width: 100px;
         right: -76.5%;
@@ -479,10 +562,38 @@ div.image-outer-child:nth-child(2)::after {
         margin: 0 0 0 50px;
     }
 
+    div.hero-content::before {
+        left: -25.6%;
+        top: 57.3%;
+    }
+
+    div.hero-content::after {
+        width: 120px;
+        left: 123.5%;
+        top: 57.3%;
+    }
+
+    div.hero-arrow-body::before {
+        height: 100px;
+        right: -39.7%;
+        top: 56%;
+    }
+
+    div.hero-arrow-body::after {
+        width: 80px;
+        bottom: 8.7%;
+        right: -58.7%;
+    }
+
     div.hero-content h1 {
         font-size: 2.5em;
     }
+
+    /*div.hero-content button {
+        margin: 0;
+    }*/
     
+    /*-----------------------*/
     div.hero-content p::after {
         width: 120px;
         left: 128%;
@@ -493,6 +604,7 @@ div.image-outer-child:nth-child(2)::after {
         right: -39.7%;
         bottom: -190%;
     }
+    /*-----------------------*/
 
     div.hero-content h1::after {
         width: 80px;
@@ -560,6 +672,33 @@ div.image-outer-child:nth-child(2)::after {
         max-width: 350px;
         margin: 0 0 80px 0;
     }
+
+    div.hero-content::before {
+        width: 300px;
+        left: -40.5%;
+        top: 56.3%;
+        border-radius: 0 4px 4px 0;
+        -webkit-border-radius: 0 4px 4px 0;
+        -moz-border-radius: 0 4px 4px 0;
+        -ms-border-radius: 0 4px 4px 0;
+        -o-border-radius: 0 4px 4px 0;
+    }
+
+    div.hero-content::after {
+        display: none;
+    }
+
+    div.hero-arrow-body::before {
+        height: 190px;
+        left: -0.5%;
+        top: 54.5%;
+    }
+
+    div.hero-arrow-body::after {
+        width: 180px;
+        bottom: -22.5%;
+        left: -0.5%;
+    }
     
     div.hero-content h1 {
         font-size: 2.3em;
@@ -568,11 +707,11 @@ div.image-outer-child:nth-child(2)::after {
     div.hero-content p::before {
         width: 300px;
         left: -70%;
-        border-radius: 4px;
+        /*border-radius: 4px;
         -webkit-border-radius: 4px;
         -moz-border-radius: 4px;
         -ms-border-radius: 4px;
-        -o-border-radius: 4px;
+        -o-border-radius: 4px;*/
     }
 
     div.hero-content p::after {
@@ -690,10 +829,29 @@ div.image-outer-child:nth-child(2)::after {
         margin: 0 0 80px 0;
     }
 
+    div.hero-content::before {
+        left: -49%;
+        top: 53%;
+    }
+    
+    div.hero-arrow-body::before {
+        height: 200px;
+        left: -0.7%;
+        top: 51.5%;
+    }
+
+    div.hero-arrow-body::after {
+        width: 120px;
+        bottom: -21.7%;
+        left: -0.7%;
+    }
+    
+    
     div.hero-content h1 {
         font-size: 1.9em;
     }
 
+    /*-----------------------*/
     div.hero-content p::before {
         left: -88%;
     }
@@ -702,6 +860,7 @@ div.image-outer-child:nth-child(2)::after {
         height: 200px;
         bottom: -410.9%;
     }
+    /*-----------------------*/
 
     div.hero-content h1::after {
         width: 120px;
@@ -784,6 +943,23 @@ div.image-outer-child:nth-child(2)::after {
         margin: 0 0 50px 0;
     }
 
+    div.hero-content::before {
+        left: -61.5%;
+        top: 50.6%;
+    }
+
+    div.hero-arrow-body::before {
+        height: 185px;
+        left: -0.6%;
+        top: 49%;
+    }
+
+    div.hero-arrow-body::after {
+        width: 70px;
+        bottom: -14%;
+        left: -0.5%;
+    }
+
     div.hero-content h1 {
         font-size: 1.5em;
     }
@@ -793,6 +969,11 @@ div.image-outer-child:nth-child(2)::after {
         line-height: 1.4em;
     }
 
+    div.hero-content button {
+        margin: 20px 0 0 35px;
+    }
+
+    /*-----------------------*/
     div.hero-content p::before {
         left: -91%;
     }
@@ -801,6 +982,7 @@ div.image-outer-child:nth-child(2)::after {
         height: 185px;
         bottom: -500%;
     }
+    /*-----------------------*/
 
     div.hero-content h1::after {
         width: 70px;
